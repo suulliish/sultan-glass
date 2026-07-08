@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sultan Kazbek — Growth Operator</title>
+<meta name="description" content="Operations & Growth. +64% роста и 6.3× ROAS в OTAN за 2 года.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23070810'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='58' font-weight='700' fill='%237FE0E8' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body class="loading">
+<canvas id="world-canvas" aria-hidden="true"></canvas>
+<div class="veil"></div>
+<div class="prog" id="prog"></div>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand" data-scroll>Sultan<span>.</span></a>
+    <a href="#contact" class="nav-cta" data-scroll>Нанять ↗</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-in">
+    <span class="eyebrow">Growth Operator — Астана, KZ</span>
+    <h1 class="hero-h"><span class="line"><span class="inner">Прозрачный</span></span><span class="line"><span class="inner">результат<span class="ac">.</span></span></span></h1>
+    <p class="hero-sub">Operations &amp; Growth. Ничего не скрыто — <b>только то, что реально сработало.</b></p>
+    <div class="hero-stats">
+      <div class="st"><div class="num"><span data-count="64" data-prefix="+" data-suffix="%">+0%</span></div><div class="lab">рост OTAN за 2 года</div></div>
+      <div class="st"><div class="num"><span data-count="6.3" data-dec="1" data-suffix="×">0×</span></div><div class="lab">средний ROAS</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="blk" id="otan">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-idx">01</span><span class="sec-title">OTAN</span></div>
+    <p class="lead rv">Заместитель директора, 08.2023 — сейчас. Выстроил полный цикл продукт→продажи→логистика→сервис, вывел рекламу в устойчивую прибыль.</p>
+    <div class="statgrid rv d1">
+      <div class="cell"><div class="big"><span data-count="90.7" data-dec="1" data-suffix="M">0M</span></div><div class="cap">Выручка 2024, ₸</div></div>
+      <div class="cell"><div class="big"><span data-count="167" data-suffix="M ₸">0M ₸</span></div><div class="cap">от рекламы</div></div>
+      <div class="cell"><div class="big"><span data-count="80" data-suffix="%">0%</span></div><div class="cap">Доставок ≤3 дня</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap rv">
+    <span class="eyebrow">Свяжитесь со мной</span>
+    <h2 class="contact-h">Ясно<span class="ac">.</span> Быстро<span class="ac">.</span> Проверяемо<span class="ac">.</span></h2>
+    <a href="mailto:kazsultan.uni@gmail.com" class="btn btn-primary">kazsultan.uni@gmail.com ↗</a>
+  </div>
+</section>
+
+<footer><div class="wrap foot-in"><span>© <span id="year"></span> Sultan Kazbek</span><span class="note">V1 preview — визуальное направление, не финал</span></div></footer>
+
+<script type="module" src="js/glass3d.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

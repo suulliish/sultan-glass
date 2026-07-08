@@ -1,0 +1,81 @@
+/* ============================================================
+   Sultan Kazbek — Glass (site 2, Lusion-technique preview)
+   DISTINCT identity: cool near-black, icy cyan, geometric grotesk,
+   translucent glass hero (not metal, not warm paper).
+   ============================================================ */
+:root{
+  --bg:#07080B;
+  --bg-2:#0C0E13;
+  --line:rgba(255,255,255,.08);
+  --line-2:rgba(255,255,255,.15);
+  --fg:#E9EDF2;
+  --dim:#7A8291;
+  --ac:#7FE0E8;
+  --ac-soft:#A8ECF1;
+  --maxw:1180px;
+  --pad:clamp(20px,5vw,72px);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.loading{overflow:hidden}
+::selection{background:var(--ac);color:#07080B}
+a{color:inherit;text-decoration:none}
+h1,h2{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.0}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);position:relative}
+.ac{color:var(--ac)}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:500;font-family:"Space Grotesk",sans-serif}
+
+#world-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.no-3d #world-canvas{display:none}
+.veil{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(90% 70% at 72% 40%,transparent 0%,rgba(7,8,11,.5) 55%,var(--bg) 88%)}
+.prog{position:fixed;top:0;left:0;height:2px;background:var(--ac);width:0;z-index:200;transition:width .1s linear}
+
+nav,section,.hero,footer{position:relative;z-index:1}
+section.blk{background:rgba(7,8,11,.85)}
+.contact{background:rgba(7,8,11,.9)}
+footer{background:rgba(7,8,11,.95)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .4s var(--ease),border-color .4s var(--ease)}
+nav.scrolled{background:rgba(7,8,11,.75);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{font-family:"Space Grotesk";font-weight:600;font-size:15px}
+.brand span{color:var(--ac)}
+.nav-cta{font-size:13.5px;font-family:"Space Grotesk";font-weight:500}
+
+.hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 54px}
+.hero-h{font-size:clamp(46px,9.5vw,150px);letter-spacing:-.04em;margin-top:30px}
+.hero-h .line{display:block;overflow:hidden}
+.hero-h .inner{display:block}
+.hero-sub{margin-top:30px;max-width:560px;font-size:clamp(15px,1.9vw,19px);color:#B8BFC9}
+.hero-sub b{color:var(--fg);font-weight:600}
+.hero-stats{margin-top:54px;display:flex;gap:56px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:26px}
+.hero-stats .num{font-family:"Space Grotesk";font-weight:700;font-size:clamp(34px,5vw,58px);letter-spacing:-.02em;color:var(--ac)}
+.hero-stats .lab{margin-top:8px;font-size:12.5px;color:var(--dim)}
+
+section.blk{padding:clamp(80px,11vw,150px) 0}
+.sec-head{display:flex;gap:18px;margin-bottom:44px;border-bottom:1px solid var(--line);padding-bottom:18px}
+.sec-idx{font-family:"Space Grotesk";font-size:13px;color:var(--ac);font-weight:600}
+.sec-title{font-size:clamp(26px,4vw,44px)}
+.lead{font-size:clamp(16px,2vw,20px);line-height:1.5;max-width:760px;color:#C4CAD2}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}
+
+.statgrid{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.statgrid .cell{background:var(--bg);padding:26px 22px}
+.statgrid .big{font-family:"Space Grotesk";font-weight:700;font-size:clamp(28px,3.6vw,42px);color:var(--fg)}
+.statgrid .cap{margin-top:10px;font-size:12px;color:var(--dim)}
+@media(max-width:700px){.statgrid{grid-template-columns:1fr}}
+
+.contact{padding:clamp(90px,13vw,160px) 0}
+.contact-h{font-family:"Space Grotesk";font-weight:700;font-size:clamp(32px,6.5vw,74px);letter-spacing:-.02em;margin-top:20px}
+.btn{display:inline-flex;margin-top:36px;padding:15px 26px;border-radius:3px;font-family:"Space Grotesk";font-weight:600;font-size:14px}
+.btn-primary{background:var(--ac);color:#07080B}
+
+footer{border-top:1px solid var(--line);padding:26px 0}
+.foot-in{display:flex;justify-content:space-between;font-size:12.5px;color:var(--dim);flex-wrap:wrap;gap:8px}
+.foot-in .note{color:#5a6170;font-style:italic}
+
+@media(prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}.rv{opacity:1;transform:none}}
