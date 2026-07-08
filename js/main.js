@@ -63,3 +63,26 @@ document.querySelectorAll('a[data-scroll]').forEach((a)=>{
 
 const yearEl=document.getElementById('year');
 if(yearEl) yearEl.textContent=new Date().getFullYear();
+
+// pitch modal
+const modal=document.getElementById('pitchModal');
+const modalFrame=document.getElementById('modalFrame');
+const modalTitle=document.getElementById('modalTitle');
+function openModal(pdf,title){
+  if(!modal||!pdf) return;
+  if(modalTitle) modalTitle.textContent=title||'Разбор';
+  modalFrame.src=pdf+'#view=FitH';
+  modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+}
+function closeModal(){
+  if(!modal) return;
+  modal.classList.remove('open'); modal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open');
+  setTimeout(()=>{ modalFrame.src='about:blank'; },260);
+}
+document.querySelectorAll('.pitch-card').forEach((c)=>c.addEventListener('click',()=>openModal(c.dataset.pdf,c.dataset.title)));
+if(modal){
+  modal.querySelectorAll('[data-close]').forEach((el)=>el.addEventListener('click',closeModal));
+  document.addEventListener('keydown',(e)=>{ if(e.key==='Escape'&&modal.classList.contains('open')) closeModal(); });
+}
